@@ -2,25 +2,25 @@
 
 ## What this extension does
 
-This extension is for **Support Engineers** who work in **Zendesk Agent**. It adds a **Rate Escalation** button on ticket pages so you can give quick feedback on how an escalation was handled.
+This extension is for **Support Engineers** who work with Zendesk Tickets. It adds a **Rate Escalation** button on ticket pages so you can give quick feedback on how an escalation was handled.
 
 When you submit a rating, the extension sends:
 
 - **Ticket URL** — the Zendesk ticket you are viewing  
 - **Rating** — Bad, Okay, or Good  
-- **Escalator** — chosen from people who appear in the ticket conversation (when detected)  
+- **Escalator** — chosen from people who appear in the ticket conversation 
 - **Comment** — optional (may require a comment for certain ratings)  
 - **SE name** and **Product area** — pulled from the page when the layout allows  
 
-Data is stored in a **Google Sheet**. The extension does not send ratings anywhere except through your team’s **Google Apps Script** link (configured once in the extension popup).
+Data is stored in a Google Sheet.
 
 ---
 
-## For support engineers — install and use (after you download it)
+## For support engineers — how to install and use (after you download it)
 
-### 1. Unpack the extension
+### 1. Download/clone the extension
 
-- Unzip the download if needed. You should have a folder that contains `manifest.json` at the top level (along with `content.js`, `popup.html`, icons, etc.).  
+- Unzip the download if needed. You should have a folder that contains `manifest.json` at the top level (along with `content.js`, `popup.html`, etc.).  
 - **Keep this folder** where Chrome can read it (for example your Documents folder). Do not delete it after installing; Chrome loads the extension from this folder.
 
 ### 2. Install in Chrome (load unpacked)
@@ -34,7 +34,7 @@ Data is stored in a **Google Sheet**. The extension does not send ratings anywhe
 
 ### 3. Configure the Apps Script URL (one time)
 
-Your team should give you a **Google Apps Script web app URL** (it usually looks like `https://script.google.com/macros/s/.../exec`).
+You should have a **Google Apps Script web app URL** (it usually looks like `https://script.google.com/macros/s/.../exec`).
 
 1. Click the **puzzle icon** in Chrome → **Zendesk Escalation Rater** (pin it if you want quick access).  
 2. Paste that URL into **Google Apps Script URL**.  
@@ -44,7 +44,7 @@ You can use **Rating history** and **view all ratings** (if enabled by your team
 
 ### 4. How to use on Zendesk
 
-1. Open a ticket in the **Agent** workspace, e.g. `https://yourcompany.zendesk.com/agent/tickets/12345`.  
+1. Open a ticket 
 2. When the page loads, find **Rate Escalation** (within the sidebar).  
 3. Click it, pick **Bad**, **Okay**, or **Good**, choose an **escalator**, add a **comment** if needed, then **Submit Rating**.  
 4. Wait for the success message. The row is written to your team’s Google Sheet.
