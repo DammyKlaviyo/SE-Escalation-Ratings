@@ -1,0 +1,47 @@
+# --- Not part of the Chrome extension; safe to ignore in repo ---
+
+# Hosted / deployed elsewhere (keep local copies only if you prefer)
+privacy-policy.html
+google-apps-script.js
+
+# Packaged builds & signing keys (never commit)
+*.crx
+*.pem
+*.zip
+
+# Local / machine-specific
+.env
+.env.*
+*.local
+
+# Dependencies & tooling caches (if you add Node/npm later)
+node_modules/
+.npm
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / IDEs (personal choice — remove these lines if your team commits shared config)
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Backup / scratch
+*.bak
+*.tmp

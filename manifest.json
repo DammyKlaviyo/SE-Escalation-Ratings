@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Zendesk Escalation Rater",
+  "version": "1.0.0",
+  "description": "Rate Zendesk ticket escalations and sync ratings to Google Sheets for your team.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://*.zendesk.com/*",
+    "https://script.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.zendesk.com/agent/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ]
+}

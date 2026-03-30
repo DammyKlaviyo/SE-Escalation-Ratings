@@ -1,0 +1,298 @@
+/* Styles for the Rate Ticket button and modal */
+
+.se-rating-button-container {
+  margin: 16px 0;
+  padding: 0;
+}
+
+.se-rating-button {
+  border: 1px solid rgb(176, 184, 190); 
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-weight: 400;
+}
+
+.se-rating-button:hover {
+  background-color: #34495e;
+  color: white;
+}
+
+.se-rating-button:active {
+  background-color: #1a252f;
+  color: white;
+}
+
+.se-rating-button-rated,
+.se-rating-button-rated:hover,
+.se-rating-button-rated:active {
+  background-color: #95a5a6;
+  color: #fff;
+  cursor: default;
+}
+
+/* Toast: non-blocking success/error messages */
+.se-rating-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10001;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.se-rating-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.se-rating-toast--success {
+  background-color: #27ae60;
+  color: white;
+}
+
+.se-rating-toast--error {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Modal overlay */
+.se-rating-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal container */
+.se-rating-modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal header */
+.se-rating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.se-rating-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+.se-rating-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.se-rating-close:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Form styles */
+#se-rating-form {
+  padding: 20px;
+}
+
+.se-rating-options {
+  margin-bottom: 20px;
+}
+
+.se-rating-options label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.se-rating-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.se-rating-option {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  background-color: white;
+  color: #333;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.se-rating-option:hover {
+  border-color: #3498db;
+  background-color: #f8f9fa;
+}
+
+.se-rating-option.selected {
+  border-color: #3498db;
+  background-color: #3498db;
+  color: white;
+}
+
+.se-rating-option[data-rating="bad"].selected {
+  border-color: #e74c3c;
+  background-color: #e74c3c;
+}
+
+.se-rating-option[data-rating="okay"].selected {
+  border-color: #f39c12;
+  background-color: #f39c12;
+}
+
+.se-rating-option[data-rating="good"].selected {
+  border-color: #27ae60;
+  background-color: #27ae60;
+}
+
+.se-rating-escalator {
+  margin-bottom: 20px;
+}
+
+.se-rating-escalator label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.se-rating-escalator select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: white;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.se-rating-escalator select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.se-rating-comment {
+  margin-bottom: 20px;
+}
+
+.se-rating-comment label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.se-rating-comment textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.se-rating-comment textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.se-rating-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.se-rating-submit-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.se-rating-submit-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.se-rating-submit-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
